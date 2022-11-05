@@ -1,0 +1,2 @@
+public class Hw28 {
+}
