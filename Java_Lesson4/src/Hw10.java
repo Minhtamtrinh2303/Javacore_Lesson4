@@ -28,7 +28,7 @@ public class Hw10 {
         for (int i = 0; i < arr.length; i++) {
             System.out.print("arr[" + i + "] = ");
             arr[i] = new Scanner(System.in).nextInt();
-            for (int j = 0; j < arr.length; j++) {
+            for (int j = 0; j < i; j++) {
                 if (arr[j] == arr[i]) {
                     System.out.println("Invalid value");
                     System.out.print("arr[" + i + "] = ");

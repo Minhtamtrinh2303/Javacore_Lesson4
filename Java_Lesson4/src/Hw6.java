@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Hw6 {
@@ -6,26 +7,52 @@ public class Hw6 {
      * Tính trung bình cộng các phần tử của dãy nằm trong đoạn [b, c]
      */
     public static void main(String[] args) {
-        int[] arr = array();
-        System.out.print("b =  ");
-        int b = new Scanner(System.in).nextInt();
-        System.out.println("c = ");
-        int c = new Scanner(System.in).nextInt();
+        int[] arr = ArrayOfInteger();
+        int[] new_arr = NewArrayOfInteger(arr);
+        System.out.println("Mean of the new array is: " +meanOfNewArray(new_arr));
     }
-    public static int[] array() {
-        System.out.print("Nhập số lượng phần tử của mảng: ");
+
+    public static int[] ArrayOfInteger() {
+        System.out.print("Enter the number of element(s) = ");
         int n = new Scanner(System.in).nextInt();
-        int[] a = new int[n];
-        for (int i = 0; i < a.length; i++ ) {
+        int[] arr = new int[n];
+        for (int i = 0; i < arr.length; i++ ) {
             System.out.print("a[ " + i + " ] = ");
+            arr[i] = new Scanner(System.in).nextInt();
         }
-        return a;
+        return arr;
     }
-    public static double Sum(int[] arr) {
-        int S = 0;
-        for (int i = 0; i < arr.length; i++) {
-            S += arr[i];
+
+    public static int[] NewArrayOfInteger(int[] arr) {
+        System.out.print("Enter b = ");
+        int b = new Scanner(System.in).nextInt();
+        System.out.print("Enter c = ");
+        int c = new Scanner(System.in).nextInt();
+        // create a new array
+        int count = 0;
+        for (int temp : arr) {
+            if ( temp >= b && temp <= c ) {
+                count++; // the number of elements in an array
+            }
         }
-        return (double) S / arr.length;
+        //elements in a new array
+        int[] new_arr = new int[count];
+        int i = 0; // index
+        for (int temp : arr) {
+            if ( temp >=b && temp <= c ) {
+                new_arr[i] = temp;
+                i++;
+            }
+        }
+        System.out.println("The element(s) in a new array is(are): " + Arrays.toString(new_arr));
+        return new_arr;
+    }
+
+    public static double meanOfNewArray(int[] new_arr) {
+        int sum = 0;
+        for (int i = 0; i < new_arr.length; i++) {
+            sum += new_arr[i];
+        }
+        return ((double)sum / new_arr.length);
     }
 }
