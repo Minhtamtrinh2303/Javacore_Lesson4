@@ -7,7 +7,7 @@ public class Hw26 {
      */
     public static void main(String[] args) {
         int[] arr = fillArrayOfIntegers();
-
+        count_occur(arr);
     }
 
     public static int[] fillArrayOfIntegers() {
@@ -19,5 +19,17 @@ public class Hw26 {
             arr[i] = new Scanner(System.in).nextInt();
         }
         return arr;
+    }
+
+    public static void count_occur(int[] arr) {
+        System.out.print("Enter x = ");
+        int x = new Scanner(System.in).nextInt();
+        int count = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if ( arr[i] == x ) {
+                count++;
+            }
+        }
+        System.out.println("The occurence(s) of number x in the array = " +count);
     }
 }
