@@ -71,5 +71,5 @@ public class Hw23 {
         }
         return sumB;
     }
-    
+
 }
