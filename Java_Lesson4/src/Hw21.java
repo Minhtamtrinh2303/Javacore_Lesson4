@@ -42,5 +42,5 @@ public class Hw21 {
         System.out.println("The sum of the elements: " + sum);
         System.out.println("The mean of the elements: " + sum / (arr.length * arr[0].length));
     }
-    
+
 }
