@@ -7,6 +7,8 @@ public class Hw28 {
      */
     public static void main(String[] args) {
         int[][] arr = fillArrayOfIntegers();
+        System.out.println("The sum of diagonal line in the array: " +MainDiagonalSum(arr));
+
     }
 
     public static int[][] fillArrayOfIntegers() {
@@ -38,6 +40,12 @@ public class Hw28 {
         }
     }
 
-    
+    public static int MainDiagonalSum(int[][] arr){
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i][i];
+        }
+        return sum;
+    }
 
 }
